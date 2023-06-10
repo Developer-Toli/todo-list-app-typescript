@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "types": [
+      "@types/node"
+    ],
+    "noEmit": true, // build hiih uyd ymar negen nemelt file gargahgui
+    "allowJs": true // js ajillaj bolno
+  },
+  "extends": "./tsconfig.json",
+  "include": [
+    ".eslintrc.cjs", // node ajildag
+    "vite.config.ts" // node ajildag
+  ]
+}

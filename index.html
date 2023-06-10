@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!-- html -> huneer yrival ner us ovog meta medeeleluud -->
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List App</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!-- preconnect http-eer umnu ni ene haygruu ehleed holbogdono -->
+</head>
+
+<body>
+  <main class="app">
+    <h1 class="app_header">Хийх зүйлсийн жагсаалт</h1>
+    <form id="app_form">
+      <input id="app_input" class="app_input" type="text" placeholder="Юу хийх гэж байна даа?" autocomplete="off" />
+    </form>
+
+    <div class="app_filter">
+      <button class="active" data-value="all">Бүгд</button>
+      <button data-value="done">Хийсэн</button>
+      <button data-value="undone">Хийгээгүй</button>
+    </div>
+    <div id="app_list" class="app_list">
+      <!-- unordered - daraalalgui list -->
+      <!-- <ul> </ul> -->
+      <!-- <p>Хийсэн хийгээгүй байна гэсэн мэссеж гаргана</p> -->
+    </div>
+    <div class="app_settings">
+      <!-- Emmet vscode extension -->
+      <div>
+        <label for="app_download_selector">Татаж авах</label>
+        <select value="" id="app_download_selector" class="app_download_selector">
+          <option value="">Татаж авах</option>
+          <option value="json">JSON</option>
+          <option value="csv">CSV</option>
+          <option value="txt">Text</option>
+        </select>
+      </div>
+      <div>
+        <label for="app_theme_switcher">Загвар</label>
+        <select value="system" id="app_theme_switcher" class="app_theme_switcher">
+          <option value="system">Систем горим</option>
+          <option value="light">Өдрийн горим</option>
+          <option value="dark">Шөнийн горим</option>
+        </select>
+      </div>
+      <div>
+        <label for="app_color_picker">Өнгө</label>
+        <select value="green" id="app_color_picker" class="app_color_picker">
+          <option value="red">Улаан</option>
+          <option value="green">Ногоон</option>
+          <option value="blue">Цэнхэр</option>
+          <option value="yellow">Шар</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Root container -->
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

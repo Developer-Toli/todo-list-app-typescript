@@ -1,0 +1,30 @@
+# git ruu oruulah shaardlagagui file-uud
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ih hemjeetei -> 100MB-500MB
+# npm install
+node_modules
+# npm run build -> production
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+# Intellij idea -> java editor
+.idea 
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
