@@ -26,7 +26,7 @@ Production build гэдэг нь манай программ жинхэнэ се
 npm run build
 ```
 
-Production build хийсэний дараа local дээрээ тестлэх бол энэ коммандыг ажиллуулна.
+Production build хийсэний дараа local дээрээ production build-аа тестлэх бол энэ коммандыг ажиллуулна.
 
 ```bash
 npm run preview
