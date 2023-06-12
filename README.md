@@ -23,5 +23,11 @@ npm start
 Production build гэдэг нь манай программ жинхэнэ сервер дээр ажиллахад бэлэн болно гэсэн үг. Production build хийхгүй бол манай TypeScript файлууд маань browser дээр ажиллахгүй. TypeScript файлуудаа заавал JavaScript файл болгож байж жинхэнэ сервер дээр ажиллана. Доорх коммандыг ажиллуулна.
 
 ```bash
-npm build
+npm run build
+```
+
+Production build хийсэний дараа local дээрээ тестлэх бол энэ коммандыг ажиллуулна.
+
+```bash
+npm run preview
 ```
