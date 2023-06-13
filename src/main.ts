@@ -174,9 +174,17 @@ async function onDownloadSelectChange(e: Event): Promise<void> {
     
     "The user aborted a request." -> aldaa garj bval hereglegch file-aa save 
     hiih uildlee uuruu boliullaa gedgiig medegdej bgaa
+
+    "window.showSaveFilePicker is not a function" -> aldaa garj bval hereglegchiin 
+    browser ene uildliig hiih bolomjgui gsn ug
     */
     const error = err as Error;
-    alert(`Алдаа гарлаа: ${error.message}`);
+    if (error.message.startsWith('The user aborted a request')) {
+      alert('Та татаж авах үйлдэлээ болиулсан байна. 🙂');
+    }
+    if (error.message.startsWith('window.showSaveFilePicker')) {
+      alert('Таны хөтөч энэ үйлдлийг хийж чадсангүй. Sorry 😥');
+    }
   }
   downloadSelect.value = '';
 }
