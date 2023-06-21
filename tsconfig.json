@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "ES2016",
+    "target": "ES2015",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": [
@@ -23,7 +23,33 @@
     "strictNullChecks": true, // null undefined
     "noUnusedLocals": true, // huvisagchuudiig shalgana
     "noUnusedParameters": true, // function parameteruudiig shalgana myfile(string a, string b)
-    "noFallthroughCasesInSwitch": true // 
+    "noFallthroughCasesInSwitch": true, // 
+    "paths": {
+      "@elements/*": [
+        "./src/elements/*"
+      ],
+      "@formatter/*": [
+        "./src/formatter/*"
+      ],
+      "@storage/*": [
+        "./src/storage/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@state/*": [
+        "./src/state/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@renderer/*": [
+        "src/renderer/*"
+      ],
+    },
+    "types": [
+      "@types/wicg-file-system-access"
+    ]
   },
   "include": [
     "src"

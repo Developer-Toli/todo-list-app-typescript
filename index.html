@@ -16,19 +16,13 @@
     <form id="app_form">
       <input id="app_input" class="app_input" type="text" placeholder="Юу хийх гэж байна даа?" autocomplete="off" />
     </form>
-
     <div class="app_filter">
       <button class="active" data-value="all">Бүгд</button>
       <button data-value="done">Хийсэн</button>
       <button data-value="undone">Хийгээгүй</button>
     </div>
-    <div id="app_list" class="app_list">
-      <!-- unordered - daraalalgui list -->
-      <!-- <ul> </ul> -->
-      <!-- <p>Хийсэн хийгээгүй байна гэсэн мэссеж гаргана</p> -->
-    </div>
+    <div id="app_list" class="app_list"></div>
     <div class="app_settings">
-      <!-- Emmet vscode extension -->
       <div>
         <label for="app_download_selector">Татаж авах</label>
         <select value="" id="app_download_selector" class="app_download_selector">
@@ -56,9 +50,14 @@
         </select>
       </div>
     </div>
-
-    <!-- Root container -->
   </main>
+
+  <!-- unordered - daraalalgui list -->
+  <!-- <ul> </ul> -->
+  <!-- <p>Хийсэн хийгээгүй байна гэсэн мэссеж гаргана</p> -->
+
+  <!-- Emmet vscode extension -->
+  <!-- Root container -->
 
   <script type="module" src="/src/main.ts"></script>
 </body>

@@ -33,6 +33,9 @@ module.exports = {
     /* 
       @Typescript-eslint
     */
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/strict-boolean-expressions': [
       2,
       {
@@ -63,7 +66,7 @@ module.exports = {
       }
     ],
     'no-console': ['warn', { allow: ['error'] }],
-    'no-unused-vars': ['error', { caughtErrors: 'all', caughtErrorsIgnorePattern: '^ignore' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrors: 'all', caughtErrorsIgnorePattern: '^ignore' }],
     'no-undef': 'error',
     'prefer-const': ['error', { destructuring: 'all', ignoreReadBeforeAssign: true }],
     curly: ['error', 'all'],
