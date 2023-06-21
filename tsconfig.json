@@ -21,8 +21,9 @@
     /* Linting */
     "strict": true, // type check
     "strictNullChecks": true, // null undefined
-    "noUnusedLocals": true, // huvisagchuudiig shalgana
+    "noUnusedLocals": false, // huvisagchuudiig shalgana
     "noUnusedParameters": true, // function parameteruudiig shalgana myfile(string a, string b)
+    // "allowUnusedLabels": true,
     "noFallthroughCasesInSwitch": true, // 
     "paths": {
       "@elements/*": [

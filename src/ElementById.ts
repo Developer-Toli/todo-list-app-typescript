@@ -14,10 +14,16 @@ export default abstract class ElementById<K extends HTMLElement> {
     if (this.element instanceof HTMLInputElement) {
       return this.element.value;
     }
+    if (this.element instanceof HTMLSelectElement) {
+      return this.element.value;
+    }
     return null;
   }
   public set value(_value: string | null) {
     if (this.element instanceof HTMLInputElement) {
+      this.element.value = _value ?? '';
+    }
+    if (this.element instanceof HTMLSelectElement) {
       this.element.value = _value ?? '';
     }
   }

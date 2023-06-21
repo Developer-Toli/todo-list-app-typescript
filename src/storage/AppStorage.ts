@@ -18,7 +18,7 @@ export default class AppStorage {
   }
 
   saveTodos(todoList: Todo[]) {
-    this.setItem('todoList', todoList);
+    this.setItem('todoList', JSON.stringify(todoList));
   }
 
   getTodos() {
@@ -26,9 +26,9 @@ export default class AppStorage {
     return JSON.parse(this.getItem('todoList') ?? '[]') as Todo[];
   }
 
-  private setItem(key: string, value: unknown) {
+  private setItem(key: string, value: string) {
     // Web storage
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, value);
   }
 
   private getItem(key: string) {

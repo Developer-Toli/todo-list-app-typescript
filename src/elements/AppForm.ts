@@ -26,12 +26,16 @@ export default class AppForm extends ElementById<HTMLFormElement> {
     }
 
     this.appRenderer.checkEmptyText();
-    this.addTodo({
-      id: generateRandomId(),
-      text: this.appInput.value ?? '',
-      done: false
-    });
 
+    if (this.appState.todoEditing && this.appState.todoEditId !== undefined) {
+      this.appRenderer.editTodo(this.appState.todoEditId);
+    } else {
+      this.addTodo({
+        id: generateRandomId(),
+        text: this.appInput.value ?? '',
+        done: false
+      });
+    }
     this.appInput.value = '';
   }
 

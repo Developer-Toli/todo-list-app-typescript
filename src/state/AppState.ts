@@ -1,3 +1,4 @@
+import AppInput from '@elements/AppInput';
 import Todo from '@interfaces/Todo';
 import AppStorage from '@storage/AppStorage';
 
@@ -10,8 +11,10 @@ export default class AppState {
   private _filterValue: string | undefined = 'all'; // hiisen, hiigeegui, bugd
   private _todoList: Todo[] = [];
   private appStorage: AppStorage;
-  constructor() {
-    this.appStorage = new AppStorage();
+  private appInput: AppInput;
+  constructor(appStorage: AppStorage, appInput: AppInput) {
+    this.appInput = appInput;
+    this.appStorage = appStorage;
     this._todoList = this.appStorage.getTodos();
   }
 
@@ -58,5 +61,22 @@ export default class AppState {
       foundTodo.done = !foundTodo.done;
       this.appStorage.saveTodos(this.todoList);
     }
+  }
+
+  public deleteTodo(listElement: HTMLLIElement) {
+    const copyTodoList = [...this.todoList];
+    this.todoList = copyTodoList.filter((todo) => todo.id !== listElement.dataset.id);
+    this.appStorage.saveTodos(this.todoList);
+  }
+
+  public saveEditedTodos(todoEditId: string | undefined) {
+    // edited todoList-ee uurchluj shine array uusgene
+    this.todoList = this.todoList.map((todo) => {
+      if (todo.id === todoEditId) {
+        todo.text = this.appInput.value ?? '';
+      }
+      return todo;
+    });
+    this.appStorage.saveTodos(this.todoList);
   }
 }

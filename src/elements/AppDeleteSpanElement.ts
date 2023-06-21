@@ -1,12 +1,18 @@
+import AppState from '@state/AppState';
 import ElementCreator from '../ElementCreator';
 import AppListElement from './AppListElement';
+import AppRenderer from '@renderer/AppRenderer';
 
 export default class AppDeleteSpanElement extends ElementCreator<'span'> {
   private appListElement: AppListElement;
-  constructor(appListElement: AppListElement) {
+  private appState: AppState;
+  private appRenderer: AppRenderer;
+  constructor(appListElement: AppListElement, appState: AppState, appRenderer: AppRenderer) {
     super('span');
 
     this.appListElement = appListElement;
+    this.appState = appState;
+    this.appRenderer = appRenderer;
     this.addClass('delete_span');
     this.html = '<i class="bi bi-x"></i>';
 
@@ -15,6 +21,8 @@ export default class AppDeleteSpanElement extends ElementCreator<'span'> {
 
   private onClick(listElement: HTMLLIElement, e: Event) {
     e.stopPropagation();
-    console.log('delete span clicking :>> ');
+    this.appState.deleteTodo(listElement);
+    this.appRenderer.filterTodos();
+    listElement.remove();
   }
 }

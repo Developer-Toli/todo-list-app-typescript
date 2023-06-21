@@ -4,6 +4,8 @@ import AppDoneIElement from './AppDoneIElement';
 import AppEditSpanElement from './AppEditSpanElement';
 import AppDeleteSpanElement from './AppDeleteSpanElement';
 import AppState from '@state/AppState';
+import AppRenderer from '@renderer/AppRenderer';
+import AppInput from './AppInput';
 
 export default class AppListElement extends ElementCreator<'li'> {
   private todo: Todo;
@@ -11,10 +13,14 @@ export default class AppListElement extends ElementCreator<'li'> {
   private appEditSpanElement: AppEditSpanElement;
   private appDeleteSpanElement: AppDeleteSpanElement;
   private appState: AppState;
-  constructor(todo: Todo, appState: AppState) {
+  private appInput: AppInput;
+  private appRenderer: AppRenderer;
+  constructor(todo: Todo, appState: AppState, appRenderer: AppRenderer, appInput: AppInput) {
     super('li');
     this.todo = todo;
     this.appState = appState;
+    this.appInput = appInput;
+    this.appRenderer = appRenderer;
 
     this.text = this.todo.text;
     this.data('id', this.todo.id);
@@ -24,10 +30,12 @@ export default class AppListElement extends ElementCreator<'li'> {
       this.addClass('done');
     }
     this.appDoneIElement = new AppDoneIElement(todo);
-    this.appEditSpanElement = new AppEditSpanElement(this);
-    this.appDeleteSpanElement = new AppDeleteSpanElement(this);
+    this.appEditSpanElement = new AppEditSpanElement(this, this.appState, this.appInput);
+    this.appDeleteSpanElement = new AppDeleteSpanElement(this, this.appState, this.appRenderer);
 
     this.createChildNodes();
+
+    this.appRenderer.filterList(this.el);
 
     this.on('click', () => this.onClick());
   }
@@ -48,6 +56,7 @@ export default class AppListElement extends ElementCreator<'li'> {
     this.appDoneIElement.attr('class', isDone ? 'done_icon bi bi-check-circle' : 'done_icon bi bi-check-circle-fill');
     this.data('done', isDone ? 'false' : 'true');
     this.toggleClass('done');
+    this.appRenderer.filterList(this.el);
     this.appState.setTodoDone(this.el);
   }
 }
