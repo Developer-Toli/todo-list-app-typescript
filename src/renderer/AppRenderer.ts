@@ -26,6 +26,14 @@ export default class AppRenderer {
     this.appInput = appInput;
   }
 
+  public initializeTodoList() {
+    if (this.appState.todoList.length > 0) {
+      this.appState.todoList.forEach((todo) => {
+        this.renderTodoList(todo);
+      });
+    }
+  }
+
   public filterTodos() {
     this.appUnorderedList.childNodes.forEach((node) => {
       this.filterList(node as HTMLLIElement);

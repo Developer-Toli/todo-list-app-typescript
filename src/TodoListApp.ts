@@ -8,7 +8,7 @@ import AppUnorderedList from '@elements/AppUnorderedList';
 import AppRenderer from '@renderer/AppRenderer';
 import AppStorage from '@storage/AppStorage';
 import AppThemeSwitcher from '@elements/AppThemeSwitcher';
-
+import AppDownloader from '@elements/AppDownloader';
 export class TodoListApp {
   private appForm: AppForm;
   private appInput: AppInput;
@@ -19,14 +19,17 @@ export class TodoListApp {
   private appUnorderedList: AppUnorderedList;
   private appEmptyText: AppEmptyText;
   private appRenderer: AppRenderer;
+  private appDownloader: AppDownloader;
   private appThemeSwitcher: AppThemeSwitcher;
   constructor() {
+    // Design Pattern
     this.appInput = new AppInput();
     this.appStorage = new AppStorage();
     this.appEmptyText = new AppEmptyText();
     this.appListContainer = new AppListContainer();
     this.appUnorderedList = new AppUnorderedList();
     this.appState = new AppState(this.appStorage, this.appInput);
+    this.appDownloader = new AppDownloader(this.appState);
     this.appThemeSwitcher = new AppThemeSwitcher(this.appStorage);
     this.appRenderer = new AppRenderer(this.appListContainer, this.appEmptyText, this.appUnorderedList, this.appState, this.appInput);
     this.appFilterButtons = new AppFilterButtons(this.appState, this.appRenderer);
@@ -35,14 +38,6 @@ export class TodoListApp {
 
   run() {
     this.appRenderer.showEmptyText(this.appState.todoList);
-    this.initializeTodoList();
-  }
-
-  private initializeTodoList() {
-    if (this.appState.todoList.length > 0) {
-      this.appState.todoList.forEach((todo) => {
-        this.appRenderer.renderTodoList(todo);
-      });
-    }
+    this.appRenderer.initializeTodoList();
   }
 }

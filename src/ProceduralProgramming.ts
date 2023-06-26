@@ -111,9 +111,6 @@ appFilterButtons.forEach((filterButton) => {
 // todolist array-gaa CSV file format-aar ynzlana
 /* 
 Algorithm - uildliin daraalal
-
-
-
 */
 function formatCSV() {
   let csvString = 'Id,Done,Text\n'; // \n -> newline

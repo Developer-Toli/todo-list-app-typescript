@@ -6,7 +6,7 @@ export default abstract class ElementById<K extends HTMLElement> {
     this.element = document.getElementById(id) as K;
   }
 
-  public getElement() {
+  public get el() {
     return this.element;
   }
 
