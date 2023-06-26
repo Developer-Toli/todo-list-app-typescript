@@ -35,9 +35,9 @@ export default class AppListElement extends ElementCreator<'li'> {
 
     this.createChildNodes();
 
-    this.appRenderer.filterList(this.el);
-
     this.on('click', () => this.onClick());
+
+    // this.appRenderer.filterTodos();
   }
 
   private createChildNodes() {
@@ -56,7 +56,7 @@ export default class AppListElement extends ElementCreator<'li'> {
     this.appDoneIElement.attr('class', isDone ? 'done_icon bi bi-check-circle' : 'done_icon bi bi-check-circle-fill');
     this.data('done', isDone ? 'false' : 'true');
     this.toggleClass('done');
-    this.appRenderer.filterList(this.el);
     this.appState.setTodoDone(this.el);
+    this.appRenderer.filterTodos();
   }
 }
