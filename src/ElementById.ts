@@ -19,6 +19,7 @@ export default abstract class ElementById<K extends HTMLElement> {
     }
     return null;
   }
+
   public set value(_value: string | null) {
     if (this.element instanceof HTMLInputElement) {
       this.element.value = _value ?? '';
@@ -28,7 +29,7 @@ export default abstract class ElementById<K extends HTMLElement> {
     }
   }
 
-  /* 
+  /*
   Ecma script 2015 2016 Class, get, set
   */
   public get children() {
@@ -164,7 +165,7 @@ export default abstract class ElementById<K extends HTMLElement> {
   }
 
   public css(styleRules: Record<string, string>) {
-    /* 
+    /*
     const obj = {
       property: 'value'
     }

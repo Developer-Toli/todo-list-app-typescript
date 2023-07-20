@@ -2,8 +2,8 @@ import AppInput from '@elements/AppInput';
 import Todo from '@interfaces/Todo';
 import AppStorage from '@storage/AppStorage';
 
-/* 
-TodoListApp-iin nuhtsul baidal bolon 
+/*
+TodoListApp-iin nuhtsul baidal bolon
 */
 export default class AppState {
   private _todoEditing = false;
