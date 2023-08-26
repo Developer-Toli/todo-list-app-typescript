@@ -3,10 +3,11 @@ import ElementById from '../ElementById';
 import AppColorPicker from './AppColorPicker';
 
 export default class AppThemeSwitcher extends ElementById<HTMLSelectElement> {
-  private appStorage: AppStorage;
+  private readonly appStorage: AppStorage;
   private appColorPicker: AppColorPicker;
   private appHtml: HTMLElement;
   private windowMatchMediaDark: MediaQueryList;
+
   constructor(appStorage: AppStorage) {
     super('app_theme_switcher');
     this.appStorage = appStorage;

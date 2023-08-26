@@ -3,7 +3,7 @@
 export default abstract class ElementCreator<K extends keyof HTMLElementTagNameMap> {
   protected element: HTMLElementTagNameMap[K];
 
-  constructor(elementType: K) {
+  protected constructor(elementType: K) {
     this.element = document.createElement(elementType);
   }
 
@@ -28,7 +28,7 @@ export default abstract class ElementCreator<K extends keyof HTMLElementTagNameM
       this.element.value = _value ?? '';
     }
   }
-  /* 
+  /*
   Ecma script 2015 2016 Class, get, set
   */
   public get children() {
@@ -164,7 +164,7 @@ export default abstract class ElementCreator<K extends keyof HTMLElementTagNameM
   }
 
   public css(styleRules: Record<string, string>) {
-    /* 
+    /*
     const obj = {
       property: 'value'
     }

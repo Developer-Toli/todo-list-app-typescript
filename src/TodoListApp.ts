@@ -1,26 +1,26 @@
+import AppDownloader from '@elements/AppDownloader';
+import AppEmptyText from '@elements/AppEmptyText';
 import AppFilterButtons from '@elements/AppFilterButtons';
 import AppForm from '@elements/AppForm';
 import AppInput from '@elements/AppInput';
-import AppState from '@state/AppState';
 import AppListContainer from '@elements/AppListContainer';
-import AppEmptyText from '@elements/AppEmptyText';
+import AppThemeSwitcher from '@elements/AppThemeSwitcher';
 import AppUnorderedList from '@elements/AppUnorderedList';
 import AppRenderer from '@renderer/AppRenderer';
+import AppState from '@state/AppState';
 import AppStorage from '@storage/AppStorage';
-import AppThemeSwitcher from '@elements/AppThemeSwitcher';
-import AppDownloader from '@elements/AppDownloader';
 export class TodoListApp {
   private appForm: AppForm;
-  private appInput: AppInput;
-  private appFilterButtons: AppFilterButtons;
-  private appState: AppState;
-  private appStorage: AppStorage;
-  private appListContainer: AppListContainer;
-  private appUnorderedList: AppUnorderedList;
-  private appEmptyText: AppEmptyText;
-  private appRenderer: AppRenderer;
   private appDownloader: AppDownloader;
+  private appFilterButtons: AppFilterButtons;
   private appThemeSwitcher: AppThemeSwitcher;
+  private readonly appInput: AppInput;
+  private readonly appState: AppState;
+  private readonly appStorage: AppStorage;
+  private readonly appRenderer: AppRenderer;
+  private readonly appEmptyText: AppEmptyText;
+  private readonly appListContainer: AppListContainer;
+  private readonly appUnorderedList: AppUnorderedList;
   constructor() {
     // Design Pattern
     this.appInput = new AppInput();

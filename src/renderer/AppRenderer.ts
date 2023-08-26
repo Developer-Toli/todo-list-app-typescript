@@ -7,11 +7,12 @@ import Todo from '@interfaces/Todo';
 import AppState from '@state/AppState';
 
 export default class AppRenderer {
-  private appState: AppState;
-  private appInput: AppInput;
+  private readonly appState: AppState;
+  private readonly appInput: AppInput;
   private appEmptyText: AppEmptyText;
   private appListContainer: AppListContainer;
   private appUnorderedList: AppUnorderedList;
+
   constructor(
     appListContainer: AppListContainer,
     appEmptyText: AppEmptyText,

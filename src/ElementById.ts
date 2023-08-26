@@ -2,7 +2,7 @@
 export default abstract class ElementById<K extends HTMLElement> {
   protected element: K;
 
-  constructor(id: string) {
+  protected constructor(id: string) {
     this.element = document.getElementById(id) as K;
   }
 

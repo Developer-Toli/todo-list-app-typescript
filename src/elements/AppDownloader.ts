@@ -6,7 +6,7 @@ import AppState from '@state/AppState';
 import CSVFormatter from '@formatter/CSVFormatter';
 
 export default class AppDownloader extends ElementById<HTMLSelectElement> {
-  private appState: AppState;
+  private readonly appState: AppState;
   private csvFormatter: CSVFormatter;
   private fileTypes = {
     json: [
@@ -28,6 +28,7 @@ export default class AppDownloader extends ElementById<HTMLSelectElement> {
       }
     ]
   };
+
   constructor(appState: AppState) {
     super('app_download_selector');
 

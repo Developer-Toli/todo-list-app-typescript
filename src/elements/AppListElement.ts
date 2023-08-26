@@ -12,9 +12,10 @@ export default class AppListElement extends ElementCreator<'li'> {
   private appDoneIElement: AppDoneIElement;
   private appEditSpanElement: AppEditSpanElement;
   private appDeleteSpanElement: AppDeleteSpanElement;
-  private appState: AppState;
-  private appInput: AppInput;
-  private appRenderer: AppRenderer;
+  private readonly appState: AppState;
+  private readonly appInput: AppInput;
+  private readonly appRenderer: AppRenderer;
+
   constructor(todo: Todo, appState: AppState, appRenderer: AppRenderer, appInput: AppInput) {
     super('li');
     this.todo = todo;

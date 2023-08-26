@@ -1,7 +1,7 @@
 import AppState from '@state/AppState';
 import ElementCreator from '../ElementCreator';
-import AppListElement from './AppListElement';
 import AppInput from './AppInput';
+import AppListElement from './AppListElement';
 
 export default class AppEditSpanElement extends ElementCreator<'span'> {
   private appListElement: AppListElement;
