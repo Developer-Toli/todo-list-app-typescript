@@ -4,3 +4,5 @@ export interface DownloadTypes {
   csv: string;
   txt: string;
 }
+
+export type KeyOfDownloadTypes = keyof DownloadTypes;

@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/node": "^20.4.5",
-    "@types/wicg-file-system-access": "^2020.9.6",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "eslint": "^8.46.0",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.8"
+    "@types/node": "^20.10.7",
+    "@types/wicg-file-system-access": "^2023.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
   }
 }

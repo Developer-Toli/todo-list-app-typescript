@@ -1,30 +1,30 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { DownloadTypes } from '@interfaces/DownloadTypes';
-import ElementById from '../ElementById';
-import AppState from '@state/AppState';
 import CSVFormatter from '@formatter/CSVFormatter';
+import { KeyOfDownloadTypes } from '@interfaces/DownloadTypes';
+import AppState from '@state/AppState';
+import ElementById from '../ElementById';
 
 export default class AppDownloader extends ElementById<HTMLSelectElement> {
   private readonly appState: AppState;
   private csvFormatter: CSVFormatter;
-  private fileTypes = {
+  private fileTypes: Record<KeyOfDownloadTypes, globalThis.FilePickerAcceptType[]> = {
     json: [
       {
         description: 'JSON file',
-        accept: { 'application/json': ['.json'] }
+        accept: { 'application/json': '.json' }
       }
     ],
     csv: [
       {
         description: 'CSV file',
-        accept: { 'text/csv': ['.csv'] }
+        accept: { 'text/csv': '.csv' }
       }
     ],
     txt: [
       {
         description: 'Text file',
-        accept: { 'text/plain': ['.txt'] }
+        accept: { 'text/plain': '.txt' }
       }
     ]
   };
@@ -38,7 +38,7 @@ export default class AppDownloader extends ElementById<HTMLSelectElement> {
   }
 
   private async onChange(): Promise<void> {
-    const downloadType = this.value as keyof DownloadTypes;
+    const downloadType = this.value as KeyOfDownloadTypes;
 
     if (this.appState.todoList.length === 0) {
       alert('Хийх зүйлс алга байна.');
