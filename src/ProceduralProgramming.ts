@@ -65,6 +65,8 @@ interface DownloadTypes {
   txt: string;
 }
 
+type KeyOfDownloadTypes = keyof DownloadTypes;
+
 const appFilterButtons = document.querySelectorAll<HTMLButtonElement>('.app_filter button');
 // document.getElementById(id) as K
 const appInput = document.getElementById('app_input') as HTMLInputElement;
@@ -141,7 +143,7 @@ async function onDownloadSelectChange(e: Event): Promise<void> {
     return;
   }
 
-  const types = {
+  const types: Record<KeyOfDownloadTypes, globalThis.FilePickerAcceptType[]> = {
     json: [
       {
         description: 'JSON file',
